@@ -8,9 +8,10 @@
 		{ id: 2, text: `short time` },
 		{ id: 3, text: `long time` },
 		{ id: 4, text: `short date` },
-		{ id: 5, text: `short date + time` },
-		{ id: 6, text: `long date + time` },
-		{ id: 7, text: `relative time` }
+		{ id: 5, text: `long date` },
+		{ id: 6, text: `short date + time` },
+		{ id: 7, text: `long date + time` },
+		{ id: 8, text: `relative time` }
 	]
 
 	let selected: string | number = 1

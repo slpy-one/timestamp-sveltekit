@@ -2,8 +2,11 @@ import type { DateInterface } from '../interface/time'
 import {
 	defaultDateType,
 	longDateTimeType,
+	longDateType,
 	longTimeType,
+	relativeType,
 	shortDateTimeType,
+	shortDateType,
 	shortTimeType
 } from './datingFunction'
 
@@ -27,11 +30,11 @@ export default function handlingDate(handlingInput: DateInterface) {
 						break
 
 					case 4:
-						returnData = shortTimeType(date)
+						returnData = shortDateType(date)
 						break
 
 					case 5:
-						returnData = longTimeType(date)
+						returnData = longDateType(date)
 						break
 
 					case 6:
@@ -40,6 +43,10 @@ export default function handlingDate(handlingInput: DateInterface) {
 
 					case 7:
 						returnData = longDateTimeType(date)
+						break
+
+					case 8:
+						returnData = relativeType(date)
 						break
 
 					default:
