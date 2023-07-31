@@ -16,31 +16,46 @@
 	let selected: string | number = 1
 
 	let type: string | number = selected
-	let date: string | number | undefined = undefined
-	let time: string | number | undefined = undefined
+	let date: string | undefined = undefined
+	let time: string | undefined = undefined
 
-	const passingData: DateInterface = {
+	let passingData: DateInterface = {
 		type: type,
 		date: date,
 		time: time
 	}
 
-	let returnData: string | number = 0
+	let returnData: string | number | undefined = 0
 
-	function innerHandling(form: string, data: string | number): any {
+	function innerHandling(form: string, data: string): any {
 		switch (form) {
 			case type:
 				type = data
+				passingData = {
+					type: type,
+					date: date,
+					time: time
+				}
 				returnData = handlingDate(passingData)
 				break
 
 			case 'date':
 				date = data
+				passingData = {
+					type: type,
+					date: date,
+					time: time
+				}
 				returnData = handlingDate(passingData)
 				break
 
 			default:
 				time = data
+				passingData = {
+					type: type,
+					date: date,
+					time: time
+				}
 				returnData = handlingDate(passingData)
 				break
 		}
@@ -62,7 +77,7 @@
 				<select
 					bind:value={selected}
 					class="!text-pastel-black !p-2 mb-2"
-					on:change={innerHandling('type', selected)}
+					on:change={innerHandling('type', selected.toString())}
 				>
 					{#each typeListing as sType}
 						{#if sType.id === 1}
@@ -83,24 +98,22 @@
 					type="date"
 					bind:value={date}
 					class="my-2 p-2"
-					on:change={innerHandling('date', date != undefined ? date : 0)}
+					on:change={innerHandling('date', date != undefined ? date : '')}
+					on:input={innerHandling('date', date != undefined ? date : '')}
 				/>
 				<input
 					type="time"
 					bind:value={time}
 					class="my-2 p-2"
-					on:change={innerHandling('time', time != undefined ? time : 0)}
+					on:change={innerHandling('time', time != undefined ? time : '')}
+					on:input={innerHandling('time', time != undefined ? time : '')}
 				/><br />
 			</form>
 
 			<!-- Result -->
 			<div class="p-4 my-2 w-full bg-whitesmoke text-pastel-black text-xl rounded">
 				<!-- &lt;t:1690778280:R&gt; -->
-				{returnData}
-
-				{type}
-				{date}
-				{time}
+				{(returnData !== '' && returnData !== 0) ? returnData : 'Waiting fot Input...'}
 			</div>
 		</div>
 	</div>
