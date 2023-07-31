@@ -17,8 +17,7 @@
 		<p>
 			&copy; 2023
 			<!-- <a href="https://suphakit.net" target="_blank" class={TW_CLASS.link}> Suphakit P. </a> -->
-			Synclarity. 
-			All Right Reserved.
+			Synclarity. All Right Reserved.
 		</p>
 	</footer>
 </div>

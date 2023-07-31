@@ -7,29 +7,39 @@
 		<div>
 			<h1 class={`${TW_CLASS.heading.xxxl} !text-5xl`}>About</h1>
 			<p>
-				This is one of various project that will be come out later in the name of "<a
+				This is one of various project that will be come out later in the name of "
+				<a
 					href="https://github.com/Synclarity"
-					target="_blank">Synclarity</a
-				>" in MIT LICENSE & Open source.
+					target="_blank"
+					class={TW_CLASS.link}>Synclarity
+				</a>
+				" in MIT LICENSE & Open source.
 			</p>
+			<br />
 			<p>
-				This project is got inspiration from <a
+				This project is got inspiration from 
+				<a
 					href="https://r.3v.fi/discord-timestamps/"
-					target="_blank">https://r.3v.fi/discord-timestamps/</a
-				> which is used to generating timestamp for discord.
-        If you want to update anything its okay to send a pull request to the repository :)
+					target="_blank"
+					class={TW_CLASS.link}>https://r.3v.fi/discord-timestamps/</a> 
+					which is used to generating timestamp for discord. If you want to update anything its okay
+				to send a pull request to the repository :)
 			</p>
 
-      <div>
-        <h3 class={`${TW_CLASS.heading.xxl}`}>
-          Links
-        </h3>
-        <div>
-          <a href="https://github.com/Synclarity/synclarity-timestamp">
-            Github Repository
-          </a>
-        </div>
-      </div>
+			<br />
+
+			<div>
+				<h3 class={`${TW_CLASS.heading.xxl}`}>Links</h3>
+				<div>
+					<a
+						href="https://github.com/Synclarity/synclarity-timestamp"
+						target="_blank"
+						class={TW_CLASS.link}
+					>
+						Github Repository
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
