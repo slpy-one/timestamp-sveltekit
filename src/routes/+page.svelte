@@ -77,7 +77,7 @@
 			<form class="!text-pastel-black !mb-2">
 				<select
 					bind:value={selected}
-					class="!text-pastel-black !p-2 mb-2"
+					class="!text-pastel-black !p-2 mb-2 rounded"
 					on:change={innerHandling('type', selected.toString())}
 				>
 					{#each typeListing as sType}
@@ -98,14 +98,14 @@
 				<input
 					type="date"
 					bind:value={date}
-					class="my-2 p-2"
+					class="my-2 p-2 mr-2 rounded"
 					on:change={innerHandling('date', date != undefined ? date : '')}
 					on:input={innerHandling('date', date != undefined ? date : '')}
 				/>
 				<input
 					type="time"
 					bind:value={time}
-					class="my-2 p-2"
+					class="my-2 p-2 rounded ml-2"
 					on:change={innerHandling('time', time != undefined ? time : '')}
 					on:input={innerHandling('time', time != undefined ? time : '')}
 				/><br />
