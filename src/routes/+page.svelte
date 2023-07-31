@@ -19,32 +19,32 @@
 	let date: string | number | undefined = undefined
 	let time: string | number | undefined = undefined
 
-  const passingData: DateInterface = {
-    type: type,
-    date: date,
-    time: time
-  }
+	const passingData: DateInterface = {
+		type: type,
+		date: date,
+		time: time
+	}
 
-  let returnData: string | number = 0
+	let returnData: string | number = 0
 
-  function innerHandling(form: string, data: string | number): any {
-    switch (form) {
-      case type:
-        type = data
-        returnData = handlingDate(passingData) 
-        break;
+	function innerHandling(form: string, data: string | number): any {
+		switch (form) {
+			case type:
+				type = data
+				returnData = handlingDate(passingData)
+				break
 
-      case 'date':
-        date = data
-        returnData = handlingDate(passingData) 
-        break;
-    
-      default:
-        time = data
-        returnData = handlingDate(passingData) 
-        break;
-    }
-  }
+			case 'date':
+				date = data
+				returnData = handlingDate(passingData)
+				break
+
+			default:
+				time = data
+				returnData = handlingDate(passingData)
+				break
+		}
+	}
 </script>
 
 <svelte:head>
@@ -59,7 +59,11 @@
 		<div class="w-[80%] md:w-[50%] text-pastel-black">
 			<!-- Input -->
 			<form class="!text-pastel-black !mb-2">
-				<select bind:value={selected} class="!text-pastel-black !p-2 mb-2" on:change={innerHandling('type', selected)}>
+				<select
+					bind:value={selected}
+					class="!text-pastel-black !p-2 mb-2"
+					on:change={innerHandling('type', selected)}
+				>
 					{#each typeListing as sType}
 						{#if sType.id === 1}
 							<option value={sType.id} class="text-pastel-black" selected>
@@ -75,18 +79,28 @@
 
 				<br />
 
-				<input type="date" bind:value={date} class="my-2 p-2" on:change={innerHandling('date', ((date != undefined) ? date : 0))} />
-				<input type="time" bind:value={time} class="my-2 p-2" on:change={innerHandling('time', ((time != undefined) ? time : 0))} /><br />
+				<input
+					type="date"
+					bind:value={date}
+					class="my-2 p-2"
+					on:change={innerHandling('date', date != undefined ? date : 0)}
+				/>
+				<input
+					type="time"
+					bind:value={time}
+					class="my-2 p-2"
+					on:change={innerHandling('time', time != undefined ? time : 0)}
+				/><br />
 			</form>
 
 			<!-- Result -->
 			<div class="p-4 my-2 w-full bg-whitesmoke text-pastel-black text-xl rounded">
 				<!-- &lt;t:1690778280:R&gt; -->
-        {returnData}
+				{returnData}
 
-        {type}
-        {date}
-        {time}
+				{type}
+				{date}
+				{time}
 			</div>
 		</div>
 	</div>
