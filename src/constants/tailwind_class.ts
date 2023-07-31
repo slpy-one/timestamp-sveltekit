@@ -8,7 +8,7 @@ const TW_CLASS = {
     xl: 'text-xl py-4',
     l: 'text-l py-2',
   },
-
+  container: "w-[80%] h-screen mx-auto flex flex-col items-center text-center justify-center"
 }
 
 export default TW_CLASS;
