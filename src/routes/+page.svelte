@@ -113,7 +113,7 @@
 			<!-- Result -->
 			<div class="p-4 my-2 w-full bg-whitesmoke text-pastel-black text-xl rounded">
 				<!-- &lt;t:1690778280:R&gt; -->
-				{(returnData !== '' && returnData !== 0) ? returnData : 'Waiting fot Input...'}
+				{returnData !== '' && returnData !== 0 ? returnData : 'Waiting fot Input...'}
 			</div>
 		</div>
 	</div>
