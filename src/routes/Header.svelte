@@ -11,11 +11,11 @@
 			{#if $page.url.pathname === '/'}
 				<!-- svelte-ignore a11y-invalid-attribute -->
 				<a href="#" class={activeButton}>
-					Home
+					SYC-TimeStamp
 				</a>
 			{:else}
 				<a href="/" class={navButton}>
-					Home
+					SYC-TimeStamp
 				</a>
 			{/if}
 			
