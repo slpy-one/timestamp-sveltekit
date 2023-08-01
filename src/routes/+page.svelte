@@ -16,50 +16,39 @@
 
 	let selected: string | number = 1
 
-	let type: string | number = selected
-	let date: string | undefined = undefined
-	let time: string | undefined = undefined
+	let _type: string | number = selected
+	let _date: string | undefined = undefined
+	let _time: string | undefined = undefined
 
 	let passingData: DateInterface = {
-		type: type,
-		date: date,
-		time: time
+		type: _type,
+		date: _date,
+		time: _time
 	}
 
 	let returnData: string | number | undefined = 0
 
 	function innerHandling(form: string, data: string): any {
+		console.log(form, data)
 		switch (form) {
-			case type:
-				type = data
-				passingData = {
-					type: type,
-					date: date,
-					time: time
-				}
-				returnData = handlingDate(passingData)
+			case 'type':
+				_type = Math.max(1, Math.min(8, Number(data)))
 				break
 
 			case 'date':
-				date = data
-				passingData = {
-					type: type,
-					date: date,
-					time: time
-				}
-				returnData = handlingDate(passingData)
+				_date = data
 				break
 
-			default:
-				time = data
-				passingData = {
-					type: type,
-					date: date,
-					time: time
-				}
-				returnData = handlingDate(passingData)
+			case 'time':
+				_time = data
 				break
 		}
+		passingData = {
+			type: _type,
+			date: _date,
+			time: _time
+		}
+		returnData = handlingDate(passingData)
 	}
 </script>
 
@@ -81,15 +70,9 @@
 					on:change={innerHandling('type', selected.toString())}
 				>
 					{#each typeListing as sType}
-						{#if sType.id === 1}
-							<option value={sType.id} class="text-pastel-black" selected>
-								{sType.text}
-							</option>
-						{:else}
-							<option value={sType.id} class="text-pastel-black">
-								{sType.text}
-							</option>
-						{/if}
+						<option value={sType.id} class="text-pastel-black">
+							{sType.text}
+						</option>
 					{/each}
 				</select>
 
@@ -97,17 +80,17 @@
 
 				<input
 					type="date"
-					bind:value={date}
+					bind:value={_date}
 					class="my-2 p-2 mr-2 rounded"
-					on:change={innerHandling('date', date != undefined ? date : '')}
-					on:input={innerHandling('date', date != undefined ? date : '')}
+					on:change={innerHandling('date', _date != undefined ? _date : '')}
+					on:input={innerHandling('date', _date != undefined ? _date : '')}
 				/>
 				<input
 					type="time"
-					bind:value={time}
+					bind:value={_time}
 					class="my-2 p-2 rounded ml-2"
-					on:change={innerHandling('time', time != undefined ? time : '')}
-					on:input={innerHandling('time', time != undefined ? time : '')}
+					on:change={innerHandling('time', _time != undefined ? _time : '')}
+					on:input={innerHandling('time', _time != undefined ? _time : '')}
 				/><br />
 			</form>
 
