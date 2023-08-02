@@ -26,7 +26,8 @@
 		time: _time
 	}
 
-	let returnData: string | number | undefined = 0
+	let returnData: string | number | undefined = handlingDate(passingData)
+	let exampleData: string | undefined = undefined
 
 	function innerHandling(form: string, data: string): any {
 		console.log(form, data)
@@ -95,9 +96,18 @@
 			</form>
 
 			<!-- Result -->
-			<div class="p-4 my-2 w-full bg-whitesmoke text-pastel-black text-xl rounded">
-				<!-- &lt;t:1690778280:R&gt; -->
+			<div class="p-4 my-2 mb-4 w-full bg-whitesmoke text-pastel-black text-xl rounded">
+				<h1 class={`${TW_CLASS.heading.xxl} !pt-0`}>
+					Result
+				</h1>
 				{returnData !== '' && returnData !== 0 ? returnData : 'Waiting fot Input...'}
+			</div>
+
+			<div class="p-4 my-2 mt-4 w-full bg-whitesmoke text-pastel-black text-xl rounded">
+				<h1 class={`${TW_CLASS.heading.xxl} !pt-0`}>
+					What showing on discord
+				</h1>
+				{exampleData}
 			</div>
 		</div>
 	</div>
