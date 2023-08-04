@@ -2,6 +2,7 @@
 	import TW_CLASS from '../constants/tailwind_class'
 	import type { DateInterface } from '../interface/time'
 	import handlingDate from '../modules/changeData'
+	import handleExample from '../modules/exampleDate'
 
 	let typeListing = [
 		{ id: 1, text: `default` },
@@ -27,7 +28,7 @@
 	}
 
 	let returnData: string | number | undefined = handlingDate(passingData)
-	let exampleData: string | undefined = undefined
+	let exampleData: string | undefined = handleExample(passingData)
 
 	function innerHandling(form: string, data: string): any {
 		console.log(form, data)
@@ -100,14 +101,18 @@
 				<h1 class={`${TW_CLASS.heading.xxl} !pt-0`}>
 					Result
 				</h1>
-				{returnData !== '' && returnData !== 0 ? returnData : 'Waiting fot Input...'}
+				<code class="bg-overlay p-2 text-whitesmoke">
+					{returnData !== '' && returnData !== 0 ? returnData : 'Waiting fot Input...'}
+				</code>
 			</div>
 
 			<div class="p-4 my-2 mt-4 w-full bg-whitesmoke text-pastel-black text-xl rounded">
 				<h1 class={`${TW_CLASS.heading.xxl} !pt-0`}>
 					What showing on discord
 				</h1>
-				{exampleData}
+				<code class="bg-overlay p-2 text-whitesmoke">
+					{exampleData}
+				</code>
 			</div>
 		</div>
 	</div>
