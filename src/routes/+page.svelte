@@ -51,6 +51,7 @@
 			time: _time
 		}
 		returnData = handlingDate(passingData)
+		exampleData = handleExample(passingData)
 	}
 </script>
 
