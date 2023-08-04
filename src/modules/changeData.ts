@@ -1,13 +1,14 @@
 import type { DateInterface } from '../interface/time'
 
 export default function handlingDate(handlingInput: DateInterface) {
-	if (Object.values(handlingInput).some(i => i === undefined)) return '';
+	const dateTranslate = ["", ":t", ":T", ":d", ":D", ":f", ":F", ":R"]
+	const rtnConst = `<t:${Math.floor(new Date().getTime() / 1000)}${dateTranslate[0]}${dateTranslate[Number(handlingInput.type) - 1]}>`
+
+	if (Object.values(handlingInput).some(i => i === undefined)) return rtnConst;
 
 	const date: number = Math.floor(
 		new Date(`${handlingInput.date} ${handlingInput.time}`).getTime() / 1000
 	)
 
-	let dateTranslate = ["", "", ":t", ":T", ":d", ":D", ":f", ":F", ":R"]
-
-	return `<t:${date}${dateTranslate[Number(handlingInput.type)]}>`
+	return `<t:${date}${dateTranslate[Number(handlingInput.type) - 1]}>`
 }
