@@ -1,5 +1,6 @@
+/* eslint-disable no-case-declarations */
 import type { DateInterface } from "../interface/time";
-import { FullDayConversion, FullMonthConversion, TimeConversion } from "./Conversion";
+import { FullDayConversion, FullMonthConversion, RelativeConversion, TimeConversion } from "./Conversion";
 
 export default function handleExample(handlingInput: DateInterface) {
   let rtnValue: string | undefined = undefined
@@ -46,6 +47,14 @@ export default function handleExample(handlingInput: DateInterface) {
 
     case 7:
       // 3 years ago (Time Diff..)
+      const diff = date.getTime() - new Date().getTime()
+      const absDiff = Math.floor(Math.abs(diff) / 1000)
+
+      if (diff < 0) {
+        rtnValue = `${RelativeConversion('old', absDiff)}`
+      } else {
+        rtnValue = `${RelativeConversion('new', absDiff)}`
+      }
       break
 
     default:
