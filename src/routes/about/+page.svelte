@@ -9,9 +9,9 @@
 			<p>
 				This is one of various project that will be come out later in the name of "
 				<a
-					href="https://github.com/Synclarity"
+					href="https://github.com/slpy-one"
 					target="_blank"
-					class={TW_CLASS.link}>Synclarity
+					class={TW_CLASS.link}>slpy.one
 				</a>
 				" in MIT LICENSE & Open source.
 			</p>
@@ -32,7 +32,7 @@
 				<h3 class={`${TW_CLASS.heading.xxl}`}>Links</h3>
 				<div>
 					<a
-						href="https://github.com/Synclarity/synclarity-timestamp"
+						href="https://github.com/slpy-one/timestamp"
 						target="_blank"
 						class={TW_CLASS.link}
 					>

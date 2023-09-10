@@ -4,7 +4,7 @@
 	import TW_CLASS from '../constants/tailwind_class'
 </script>
 
-<div class="bg-pastel-black text-whitesmoke min-h-screen w-full">
+<div class="bg-ctp-base text-ctp-text min-h-screen w-full">
 	<Header />
 
 	<main>
@@ -16,8 +16,7 @@
 	>
 		<p>
 			&copy; 2023
-			<!-- <a href="https://suphakit.net" target="_blank" class={TW_CLASS.link}> Suphakit P. </a> -->
-			Synclarity. All Right Reserved.
+			<a href="https://github.com/slpy-one" target="_blank" class={TW_CLASS.link}>slpy one team.</a> All Right Reserved.
 		</p>
 	</footer>
 </div>

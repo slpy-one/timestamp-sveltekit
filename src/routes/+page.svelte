@@ -64,16 +64,16 @@
 	<div class={TW_CLASS.container}>
 		<h1 class={TW_CLASS.heading.xxxl}>TimeStamp Generator</h1>
 
-		<div class="w-[80%] md:w-[50%] text-pastel-black">
+		<div class="w-[80%] md:w-[50%] text-ctp-base">
 			<!-- Input -->
-			<form class="!text-pastel-black !mb-2">
+			<form class="!text-ctp-base !mb-2">
 				<select
 					bind:value={selected}
-					class="!text-pastel-black !p-2 mb-2 rounded"
+					class="!text-ctp-base !p-2 mb-2 rounded"
 					on:change={innerHandling('type', selected.toString())}
 				>
 					{#each typeListing as sType}
-						<option value={sType.id} class="text-pastel-black">
+						<option value={sType.id} class="text-ctp-base">
 							{sType.text}
 						</option>
 					{/each}
@@ -98,20 +98,20 @@
 			</form>
 
 			<!-- Result -->
-			<div class="p-4 my-2 mb-4 w-full bg-whitesmoke text-pastel-black text-xl rounded">
+			<div class="p-4 my-2 mb-4 w-full bg-ctp-text text-ctp-base text-xl rounded">
 				<h1 class={`${TW_CLASS.heading.xxl} !pt-0`}>
 					Result
 				</h1>
-				<code class="bg-overlay p-2 text-whitesmoke">
+				<code class="bg-overlay p-2 text-ctp-text">
 					{returnData !== '' && returnData !== 0 ? returnData : 'Waiting fot Input...'}
 				</code>
 			</div>
 
-			<div class="p-4 my-2 mt-4 w-full bg-whitesmoke text-pastel-black text-xl rounded">
+			<div class="p-4 my-2 mt-4 w-full bg-ctp-text text-ctp-base text-xl rounded">
 				<h1 class={`${TW_CLASS.heading.xxl} !pt-0`}>
 					What showing on discord
 				</h1>
-				<code class="bg-overlay p-2 text-whitesmoke">
+				<code class="bg-overlay p-2 text-ctp-text">
 					{exampleData}
 				</code>
 			</div>
